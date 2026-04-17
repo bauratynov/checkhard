@@ -9,8 +9,8 @@ stack-canary / FORTIFY / RPATH / RWX-segment status on any x86-64
 ELF64 binary, with text or JSON output and non-zero exit on policy
 violation. One source tree, zero external dependencies.
 
-> **Status:** Sprint 1 complete — loader + 8 checks + text/JSON CLI.
-> Sprints 2–3 add unit/integration tests, CI, and release tag.
+> **Status:** v0.1.0 — loader + 8 checks + text/JSON CLI + unit +
+> integration tests + CI. See [CHANGELOG.md](CHANGELOG.md).
 
 ---
 
@@ -99,8 +99,10 @@ checkhard/
 ## Roadmap
 
 - [x] Sprint 1: ELF64 loader + 8 checks + CLI + text/JSON
-- [ ] Sprint 2: unit tests (hand-crafted in-memory binaries) + fixture builder
-- [ ] Sprint 3: CI, integration tests against real distro binaries, v0.1.0
+- [x] Sprint 2: unit tests (hand-crafted in-memory ELFs) + fixture builder
+- [x] Sprint 3: CI (gcc+clang, cppcheck, ASan/UBSan), v0.1.0
+- [ ] Sprint 4: CET IBT / shadow-stack (NT_GNU_PROPERTY_*)
+- [ ] Sprint 5: section entropy scan (packed / obfuscated detection)
 
 ## References
 
