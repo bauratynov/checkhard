@@ -1,0 +1,16 @@
+*.o
+*.obj
+*.a
+*.so
+*.dll
+*.exe
+checkhard
+tests/test_*
+!tests/test_*.c
+tests/fixtures/*.bin
+tests/fixtures/bin_*
+.vscode/
+.idea/
+*.swp
+.DS_Store
+build/
