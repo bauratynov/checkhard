@@ -23,11 +23,12 @@ $CC -O2 -fPIE -pie \
     -Wl,-z,relro -Wl,-z,now \
     "$SRC" -o bin_strict
 
-# 3. Partial RELRO only (no -z,now).
+# 3. Partial RELRO only. Modern Ubuntu ld defaults to -z,now; we have
+# to pass -Wl,-z,lazy explicitly to override the distro default.
 $CC -O2 -fPIE -pie \
     -fstack-protector-strong \
     -U_FORTIFY_SOURCE \
-    -Wl,-z,relro \
+    -Wl,-z,relro -Wl,-z,lazy \
     "$SRC" -o bin_partial_relro
 
 # 4. RPATH set (audit-worthy even if otherwise hardened).
